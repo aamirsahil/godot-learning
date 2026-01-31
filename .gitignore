@@ -2,3 +2,8 @@
 .godot/
 /android/
 builds/ 
+.import/ 
+*.apk/ 
+*.aab/ 
+*.import/ 
+*.import 
