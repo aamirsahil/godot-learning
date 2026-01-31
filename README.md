@@ -1,4 +1,4 @@
-\# Godot-learning
+#### Godot-learning
 
 
 
@@ -10,7 +10,7 @@ Create an Android swiping game to learn Godot.
 
 
 
-\## Clone the repository
+##### Clone the repository
 
 
 
@@ -28,7 +28,7 @@ cd godot-learning
 
 
 
-\## Switch to the `dev` branch
+##### Switch to the `dev` branch
 
 
 
@@ -58,7 +58,7 @@ git checkout dev
 
 
 
-\## Create a feature branch for your work
+##### Create a feature branch for your work
 
 
 
@@ -88,7 +88,7 @@ git checkout -b feature/swipe-input
 
 
 
-\## Before starting work (keep your branch up to date)
+##### Before starting work (keep your branch up to date)
 
 
 
@@ -110,7 +110,7 @@ git merge dev
 
 
 
-\## Commit changes and push your branch
+##### Commit changes and push your branch
 
 
 
@@ -130,7 +130,7 @@ git push origin feature/<your-feature-name>
 
 
 
-\## Create a Pull Request
+##### Create a Pull Request
 
 
 
@@ -148,7 +148,7 @@ git push origin feature/<your-feature-name>
 
 
 
-\## Rules
+##### Rules
 
 
 
