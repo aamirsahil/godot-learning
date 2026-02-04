@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8eaj85jlw0mw"]
 
-[ext_resource type="Texture2D" uid="uid://cqib501ykmbu7" path="res://assets/A colorful rhythm ga.png" id="1_21b1b"]
-[ext_resource type="Script" uid="uid://crvtj25rsvdw3" path="res://scripts/ui/start_menu.gd" id="1_nbrst"]
+[ext_resource type="Script" uid="uid://crvtj25rsvdw3" path="res://scripts/ui/main_menu.gd" id="1_f5paj"]
+[ext_resource type="Texture2D" uid="uid://cqib501ykmbu7" path="res://assets/A colorful rhythm ga.png" id="2_8w1fh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21b1b"]
 bg_color = Color(0.050980393, 0.050980393, 0.050980393, 0.6901961)
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nbrst")
+script = ExtResource("1_f5paj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_21b1b")
+texture = ExtResource("2_8w1fh")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
