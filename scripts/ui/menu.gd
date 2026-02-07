@@ -1,6 +1,6 @@
 extends Control
 
-@onready var logo       = $Logo
+@onready var logo       = $Log/Logo
 @onready var music      = $AudioStreamPlayer
 @onready var menu_scene = "res://scenes/ui/Main_Menu.tscn"
 func _ready():
