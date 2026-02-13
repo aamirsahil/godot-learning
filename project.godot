@@ -11,14 +11,20 @@ config_version=5
 [application]
 
 config/name="Godot-Learning"
-run/main_scene="uid://djiutircmn7na"
+run/main_scene="uid://bnsbebxbkr42j"
 config/features=PackedStringArray("4.5", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=270
-window/size/viewport_height=480
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/window_width_override=270
+window/size/window_height_override=480
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1

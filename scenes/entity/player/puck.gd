@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var push_force := 200.0
+@export var push_force := 500.0
 
 var initial_pos: Vector2
 var drag_start := false

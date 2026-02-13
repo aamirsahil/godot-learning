@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://b70nec6jav2ky"]
 
-[ext_resource type="Script" uid="uid://cfng5l6k0pr8q" path="res://scripts/player/push.gd" id="1_fowhe"]
+[ext_resource type="Script" uid="uid://cfng5l6k0pr8q" path="res://scenes/entity/player/puck.gd" id="1_fowhe"]
 [ext_resource type="Texture2D" uid="uid://buxxceel4koo6" path="res://assets/puck.png" id="1_o23pj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o23pj"]
 
 [node name="Puck" type="RigidBody2D"]
-gravity_scale = 0.0
 linear_damp = 0.5
 angular_damp = 1.0
 script = ExtResource("1_fowhe")

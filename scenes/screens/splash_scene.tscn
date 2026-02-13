@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://djiutircmn7na"]
+
+[ext_resource type="Script" uid="uid://cl0dxq0a5utqu" path="res://scenes/screens/splash_scene.gd" id="1_1c4cp"]
+[ext_resource type="AudioStream" uid="uid://d0r8dwf5gb0bv" path="res://assets/audio/interstellar_odeyssey.wav" id="2_1c4cp"]
+[ext_resource type="Texture2D" uid="uid://kffrq6nxtxyo" path="res://assets/logo-removebg.png" id="3_2d0vb"]
+
+[node name="Splash_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1c4cp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1c4cp")
+
+[node name="Logo" type="Node2D" parent="."]
+
+[node name="Logo" type="TextureRect" parent="Logo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2d0vb")
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
+root_node = NodePath("../Logo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
