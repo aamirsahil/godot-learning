@@ -18,8 +18,8 @@ position = Vector2(540, 960)
 
 [node name="Background" type="Sprite2D" parent="ObjectParent"]
 z_index = -10
-position = Vector2(-28, 19)
-scale = Vector2(5.1737285, 7.1148458)
+position = Vector2(76.169914, 99.57984)
+scale = Vector2(5.434153, 7.4729786)
 texture = ExtResource("2_wutay")
 
 [node name="Player" parent="ObjectParent" instance=ExtResource("3_qien1")]

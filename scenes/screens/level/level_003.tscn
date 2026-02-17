@@ -1,28 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwpek2wng8yo4"]
+[gd_scene load_steps=9 format=3 uid="uid://dfbsgyui5g1ul"]
 
-[ext_resource type="Script" uid="uid://b3r2fankfv5ts" path="res://scenes/screens/level/level_001.gd" id="1_m2mrg"]
-[ext_resource type="Texture2D" uid="uid://bhmrxbl43rdm2" path="res://assets/level_001/background_01.jpg" id="2_4b27v"]
-[ext_resource type="PackedScene" uid="uid://ob0ovq4xg4jv" path="res://scenes/player/player.tscn" id="4_4b27v"]
-[ext_resource type="Script" uid="uid://blxxlvexrcda4" path="res://scenes/screens/level/explosion.gd" id="5_4b27v"]
-[ext_resource type="PackedScene" uid="uid://c8jbdlcvueayc" path="res://scenes/entity/enemies/enemy.tscn" id="5_m2mrg"]
-[ext_resource type="AudioStream" uid="uid://dne1idfkjcalw" path="res://assets/audio/explosion.wav" id="6_xc3im"]
-[ext_resource type="AudioStream" uid="uid://bcog7pp04jj02" path="res://assets/audio/level_001.wav" id="7_4b27v"]
+[ext_resource type="Script" uid="uid://rudh75ku4nkg" path="res://scenes/screens/level/level_003.gd" id="1_u2odx"]
+[ext_resource type="Texture2D" uid="uid://bimhbg53n7c8q" path="res://assets/level_001/background_03.jpg" id="2_u2odx"]
+[ext_resource type="PackedScene" uid="uid://ob0ovq4xg4jv" path="res://scenes/player/player.tscn" id="3_ivnsy"]
+[ext_resource type="Script" uid="uid://blxxlvexrcda4" path="res://scenes/screens/level/explosion.gd" id="4_byjl7"]
+[ext_resource type="AudioStream" uid="uid://dne1idfkjcalw" path="res://assets/audio/explosion.wav" id="5_162s2"]
+[ext_resource type="PackedScene" uid="uid://qml78epnsbko" path="res://scenes/entity/enemies/enemy_moving.tscn" id="5_rc5uh"]
+[ext_resource type="AudioStream" uid="uid://bcog7pp04jj02" path="res://assets/audio/level_001.wav" id="7_syekd"]
 
 [sub_resource type="GDScript" id="GDScript_4b27v"]
 
-[node name="Level1" type="Node2D"]
-script = ExtResource("1_m2mrg")
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_u2odx")
 
 [node name="ObjectParent" type="Node2D" parent="."]
 position = Vector2(540, 960)
 
 [node name="Background" type="Sprite2D" parent="ObjectParent"]
 z_index = -10
-position = Vector2(120.24994, 327.39874)
-scale = Vector2(6.4300838, 8.842569)
-texture = ExtResource("2_4b27v")
+position = Vector2(-0.9999695, 91.00012)
+scale = Vector2(10.701796, 14.716973)
+texture = ExtResource("2_u2odx")
 
-[node name="Player" parent="ObjectParent" instance=ExtResource("4_4b27v")]
+[node name="Player" parent="ObjectParent" instance=ExtResource("3_ivnsy")]
 position = Vector2(0.9999995, 587)
 scale = Vector2(5, 5)
 
@@ -30,28 +30,19 @@ scale = Vector2(5, 5)
 position = Vector2(-540, -960)
 
 [node name="Explosion" type="Node" parent="ObjectParent"]
-script = ExtResource("5_4b27v")
+script = ExtResource("4_byjl7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ObjectParent/Explosion"]
-stream = ExtResource("6_xc3im")
+stream = ExtResource("5_162s2")
 
 [node name="Enemies" type="Node" parent="ObjectParent"]
 script = SubResource("GDScript_4b27v")
 
-[node name="Enemy" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
-position = Vector2(209, 272)
+[node name="EnemyMoving" parent="ObjectParent/Enemies" instance=ExtResource("5_rc5uh")]
+position = Vector2(734, 957)
 
-[node name="Enemy2" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
-position = Vector2(552, 298)
-
-[node name="Enemy3" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
-position = Vector2(361, 527)
-
-[node name="Enemy4" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
-position = Vector2(711, 907)
-
-[node name="Enemy5" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
-position = Vector2(881, 423)
+[node name="EnemyMoving2" parent="ObjectParent/Enemies" instance=ExtResource("5_rc5uh")]
+position = Vector2(992, 374)
 
 [node name="Texts" type="Node" parent="ObjectParent"]
 
@@ -93,7 +84,7 @@ theme_override_font_sizes/font_size = 50
 text = "Ammo : "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_4b27v")
+stream = ExtResource("7_syekd")
 
 [connection signal="ammo_done" from="ObjectParent/Player" to="." method="_on_player_ammo_done"]
 [connection signal="laser_shot" from="ObjectParent/Player" to="." method="_on_player_laser_shot"]

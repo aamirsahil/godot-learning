@@ -2,6 +2,7 @@ extends Node
 
 var level_001_scene = preload("res://scenes/screens/level/level_001.tscn")
 var level_002_scene = preload("res://scenes/screens/level/level_002.tscn")
+var level_003_scene = preload("res://scenes/screens/level/level_003.tscn")
 
 signal back_to_menu
 
@@ -15,6 +16,8 @@ func show_level(level_num:int) -> void:
 		switch_scene(level_001_scene)
 	elif level_num == 1:
 		switch_scene(level_002_scene)
+	elif level_num == 2:
+		switch_scene(level_003_scene)
 	current_scene.done.connect(show_level)
 	current_scene.quit_game.connect(show_menu)
 	
