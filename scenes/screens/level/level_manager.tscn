@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cxa428grpk2ev"]
+[gd_scene load_steps=2 format=3 uid="uid://cxa428grpk2ev"]
 
-[node name="LevelManager" type="Node2D"]
+[ext_resource type="Script" uid="uid://bgevxgcpof0bw" path="res://scenes/screens/level/level_manager.gd" id="1_bwvp8"]
+
+[node name="LevelManager" type="Node"]
+script = ExtResource("1_bwvp8")
