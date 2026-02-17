@@ -17,6 +17,6 @@ func _input(event):
 		# Mouse released
 		elif drag_start:
 			var final_pos = get_global_mouse_position()
-			var direction = (final_pos - initial_pos).normalized()
+			var direction = -(final_pos - initial_pos).normalized()
 			apply_central_impulse(direction * push_force)
 			drag_start = false
