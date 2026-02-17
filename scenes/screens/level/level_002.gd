@@ -20,7 +20,7 @@ func _ready() -> void:
 	music.play()
 	objective_text.modulate.a = 1.0
 	print(player.laser_ammo)
-	player.laser_ammo = 25
+	player.laser_ammo = 20
 	ammo_text.text = "Ammo : " + str(player.laser_ammo)
 	for e in enemies.get_children():
 		e.destroyed.connect(explosion._on_enemy_destroyed)
@@ -43,4 +43,4 @@ func _on_player_ammo_done() -> void:
 	else:
 		congrats_text.modulate.a = 1.0
 	await get_tree().create_timer(2.0).timeout
-	done.emit(1)
+	quit_game.emit()

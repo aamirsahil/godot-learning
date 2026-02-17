@@ -2,7 +2,7 @@ extends Node
 
 var splash_scene = preload("res://scenes/screens/splash_scene.tscn")
 var main_menu_scene = preload("res://scenes/screens/main_menu.tscn")
-var level_001_scene = preload("res://scenes/screens/level/level_001.tscn")
+var level_manager_scene = preload("res://scenes/screens/level/level_manager.tscn")
 
 var current_scene
 
@@ -19,8 +19,7 @@ func show_main_menu() -> void:
 	current_scene.quit_game.connect(quit_game)
 
 func show_level():
-	switch_scene(level_001_scene)
-	current_scene.level_retry.connect(show_level)
+	switch_scene(level_manager_scene)
 	current_scene.back_to_menu.connect(show_main_menu)
 	
 func quit_game():
