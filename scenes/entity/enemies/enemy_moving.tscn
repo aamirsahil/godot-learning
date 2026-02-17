@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://qml78epnsbko"]
+
+[ext_resource type="Script" uid="uid://dpcjd1s67dlna" path="res://scenes/entity/enemies/enemy_moving.gd" id="1_kgja3"]
+[ext_resource type="Texture2D" uid="uid://cnxo1dst8scgu" path="res://assets/enemies/ship.png" id="2_0170s"]
+[ext_resource type="AudioStream" uid="uid://dne1idfkjcalw" path="res://assets/audio/explosion.wav" id="3_4t8jl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arekt"]
+size = Vector2(164, 142)
+
+[node name="EnemyMoving" type="Area2D"]
+rotation = 1.5707964
+script = ExtResource("1_kgja3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0170s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.0000002, -5.0000076)
+shape = SubResource("RectangleShape2D_arekt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4t8jl")
+volume_db = 1.0
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

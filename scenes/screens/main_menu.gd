@@ -20,7 +20,7 @@ signal quit_game
 @onready var music = $AudioStreamPlayer
 
 @onready var BASE_WIDTH = 1080
-@onready var BASE_HEIGHT = 1920
+@onready var BASE_HEIGHT = 2050
 
 func _ready() -> void:
 	# position and scale elements
