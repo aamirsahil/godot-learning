@@ -1,11 +1,5 @@
-1) Puck interation
-- swipe at the stone to make it move in that direction
-- after the stone stops it disappears and reappers in the initial position
-2) Target
-- generate target at random position
-- once the target is hit by the puck it disappears and reappears somewhere else
-3) keep score
-4) add go back and quit buttons
+Player control
+1) Shoot
 ===========================
 List of minigames
 1) Hit the target

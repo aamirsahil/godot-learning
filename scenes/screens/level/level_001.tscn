@@ -1,31 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwpek2wng8yo4"]
+[gd_scene load_steps=9 format=3 uid="uid://cwpek2wng8yo4"]
 
-[ext_resource type="Texture2D" uid="uid://dg44lmd3g8esx" path="res://assets/background.png" id="1_3n3ty"]
 [ext_resource type="Script" uid="uid://b3r2fankfv5ts" path="res://scenes/screens/level/level_001.gd" id="1_m2mrg"]
-[ext_resource type="PackedScene" uid="uid://b70nec6jav2ky" path="res://scenes/entity/player/puck.tscn" id="2_m2mrg"]
+[ext_resource type="Texture2D" uid="uid://c426g8qtx56kx" path="res://assets/level_001/background.jpg" id="2_4b27v"]
 [ext_resource type="PackedScene" uid="uid://c05vmol1vv53w" path="res://scenes/entity/walls.tscn" id="3_4j54o"]
 [ext_resource type="PackedScene" uid="uid://ob0ovq4xg4jv" path="res://scenes/player/player.tscn" id="4_4b27v"]
+[ext_resource type="Script" uid="uid://blxxlvexrcda4" path="res://scenes/screens/level/explosion.gd" id="5_4b27v"]
+[ext_resource type="PackedScene" uid="uid://c8jbdlcvueayc" path="res://scenes/entity/enemies/enemy.tscn" id="5_m2mrg"]
+[ext_resource type="AudioStream" uid="uid://dne1idfkjcalw" path="res://assets/audio/explosion.wav" id="6_xc3im"]
+
+[sub_resource type="GDScript" id="GDScript_4b27v"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_m2mrg")
 
-[node name="object_parent" type="Node2D" parent="."]
+[node name="ObjectParent" type="Node2D" parent="."]
 position = Vector2(540, 960)
 
-[node name="background" type="Sprite2D" parent="object_parent"]
+[node name="Background" type="Sprite2D" parent="ObjectParent"]
 z_index = -10
-position = Vector2(4.5, 17.00003)
-scale = Vector2(1.0595704, 1.2617189)
-texture = ExtResource("1_3n3ty")
+position = Vector2(9.999962, 79.49996)
+scale = Vector2(1.8525001, 4.424444)
+texture = ExtResource("2_4b27v")
 
-[node name="Puck" parent="object_parent" instance=ExtResource("2_m2mrg")]
-position = Vector2(52, 20)
-scale = Vector2(2, 2)
-
-[node name="Walls" parent="object_parent" instance=ExtResource("3_4j54o")]
+[node name="Walls" parent="ObjectParent" instance=ExtResource("3_4j54o")]
 position = Vector2(-448.00003, -834.99994)
 scale = Vector2(3.5, 3.6)
 
-[node name="Player" parent="object_parent" instance=ExtResource("4_4b27v")]
+[node name="Player" parent="ObjectParent" instance=ExtResource("4_4b27v")]
 position = Vector2(0.9999995, 587)
 scale = Vector2(5, 5)
+
+[node name="Projectiles" type="Node2D" parent="ObjectParent"]
+position = Vector2(-540, -960)
+
+[node name="Explosion" type="Node" parent="ObjectParent"]
+script = ExtResource("5_4b27v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ObjectParent/Explosion"]
+stream = ExtResource("6_xc3im")
+
+[node name="Enemies" type="Node" parent="ObjectParent"]
+script = SubResource("GDScript_4b27v")
+
+[node name="Enemy" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
+position = Vector2(209, 272)
+
+[node name="Enemy2" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
+position = Vector2(552, 298)
+
+[node name="Enemy3" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
+position = Vector2(361, 527)
+
+[node name="Enemy4" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
+position = Vector2(711, 907)
+
+[node name="Enemy5" parent="ObjectParent/Enemies" instance=ExtResource("5_m2mrg")]
+position = Vector2(881, 423)
+
+[connection signal="laser_shot" from="ObjectParent/Player" to="." method="_on_player_laser_shot"]

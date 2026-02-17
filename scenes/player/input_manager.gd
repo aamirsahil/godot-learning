@@ -1,11 +1,11 @@
-extends Node2D
-@export var move_threshold := 40.0      # pixels needed for swipe move
-@export var tap_time_threshold := 0.2   # quick tap = shoot
-@export var move_distance := 100.0      # how far player moves per swipe
+extends Node
+@export var move_threshold = 40.0      # pixels needed for swipe move
+@export var tap_time_threshold = 0.2   # quick tap = shoot
+@export var move_distance = 200.0      # how far player moves per swipe
 
-var start_time := 0.0
-var touch_start_x := 0.0
-var tracking_touch := false
+var start_time = 0.0
+var touch_start_x = 0.0
+var tracking_touch = false
 
 func _input(event):
 	# TOUCH START
@@ -37,6 +37,15 @@ func _input(event):
 			var delta_x = event.position.x - touch_start_x
 			tracking_touch = false
 			_handle_gesture(delta_x, delta_time)
+	
+	if event.is_action_pressed("move_left"):
+		move_player(-move_distance)
+
+	elif event.is_action_pressed("move_right"):
+		move_player(move_distance)
+		
+	if event.is_action_pressed("shoot_laser"):
+		shoot()
 
 func _handle_gesture(delta_x: float, delta_time: float):
 	# SWIPE MOVE
