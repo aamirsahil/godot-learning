@@ -1,0 +1,8 @@
+{
+	"player": {"ammo": 5},
+	"music": "res://assets/audio/music/level_001_part_001.wav",
+	"objective_text": "Destroy all enemies!", "failure_text" : "You lose", "congrats_text" : "Well Done",
+	"enemies": [
+		{"scene": "res://scenes/enemies/static_enemy.tscn", "position": [0, 2]},
+		],
+}

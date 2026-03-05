@@ -1,0 +1,131 @@
+{
+"timeline" : [
+{
+"type" : "music",
+"src" : "res://assets/audio/music/cutscene_music_001.mp3"
+},
+
+
+
+
+{
+"type" : "text",
+"id" : "text_001",
+"content" : "Why am I killing them...",
+"position" : "center"
+},
+{
+"type" : "animate",
+"target" : "text_001",
+"animation" : {"type" : "fade_in", "duration" : 1.0}
+},
+{
+"type" : "wait_tap"
+},
+{
+"type" : "animate",
+"target" : "text_001",
+"animation" : {"type" : "fade_out", "duration" : 1.0}
+},
+
+
+
+
+{
+"type" : "text",
+"id" : "text_002",
+"content" : "What will...",
+"position" : "center"
+},
+{
+"type" : "animate",
+"target" : "text_002",
+"animation" : {"type" : "fade_in", "duration" : 1.0}
+},
+{
+"type" : "wait_tap"
+},
+{
+"type" : "animate",
+"target" : "text_002",
+"animation" : {"type" : "fade_out", "duration" : 1.0}
+},
+
+
+
+
+{
+"type" : "wait",
+"duration" : 1.0
+},
+
+
+
+
+{
+"type" : "background",
+"id" : "bg_001",
+"src" : "res://assets/sprites/background/cutscene_background.webp",
+"position" : [0.0, 0.0, 1.0, 1.0]
+},
+{
+"type" : "animate",
+"target" : "bg_001",
+"animation" : {"type" : "fade_in", "duration" : 1.0}
+},
+
+
+
+
+{
+"type" : "wait",
+"duration" : 1.0
+},
+
+
+
+
+{
+"type" : "text_box",
+"id" : "text_box_001",
+"content": "Excellent job",
+"portrait_src": "res://assets/sprites/characters/milya.webp",
+"name": "Miya",
+"anchor": "top",
+},
+{
+"type" : "animate",
+"target" : "text_box_001",
+"animation" : {"type" : "fade_in", "duration" : 1.0}
+},
+{
+"type" : "wait_tap",
+},
+{
+"type" : "text_box",
+"id" : "text_box_001",
+"content": "Next we will hit them in their base",
+"name": "Miya",
+"anchor": "top",
+},
+{
+"type" : "wait_tap"
+},
+{
+"type" : "text_box",
+"id" : "text_box_001",
+"content": "Brace for a serious fight",
+"name": "Miya",
+"anchor": "top",
+},
+{
+"type" : "wait_tap"
+},
+
+
+
+{
+"type" : "end"
+}
+]
+}

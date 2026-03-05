@@ -1,0 +1,86 @@
+{
+"timeline" : [
+{
+"type" : "music",
+"src" : "res://assets/audio/music/cutscene_music_002.mp3"
+},
+
+
+
+
+{
+"type" : "wait",
+"duration" : 1.0
+},
+
+
+
+
+{
+"type" : "background",
+"id" : "bg_001",
+"src" : "res://assets/sprites/background/cutscene_background.webp",
+"position" : [0.0, 0.0, 1.0, 1.0]
+},
+{
+"type" : "animate",
+"target" : "bg_001",
+"animation" : {"type" : "fade_in", "duration" : 1.0}
+},
+
+
+
+
+{
+"type" : "wait",
+"duration" : 1.0
+},
+
+
+
+
+{
+"type" : "text_box",
+"id" : "text_box_001",
+"content": "Test no. 0056 finished... in failure",
+"portrait_src": "res://assets/sprites/characters/milya.webp",
+"name": "Miya",
+"anchor": "Center",
+},
+{
+"type" : "animate",
+"target" : "text_box_001",
+"animation" : {"type" : "fade_in", "duration" : 1.0}
+},
+{
+"type" : "wait_tap",
+},
+{
+"type" : "text_box",
+"id" : "text_box_001",
+"content": "Commencing test no. 0057",
+"name": "Miya",
+"anchor": "top",
+},
+{
+"type" : "wait",
+"duration" : 2.0
+},
+{
+"type" : "text_box",
+"id" : "text_box_001",
+"content": "Are you awake?",
+"name": "Miya",
+"anchor": "top",
+},
+{
+"type" : "wait_tap"
+},
+
+
+
+{
+"type" : "end"
+}
+]
+}
