@@ -1,8 +1,8 @@
 extends Node
 
-var splash_scene = preload("res://scenes/screens/splash_scene.tscn")
-var main_menu_scene = preload("res://scenes/screens/main_menu.tscn")
-var level_manager_scene = preload("res://scenes/screens/level/level_manager.tscn")
+var splash_scene = Global.get_scene(Global.SceneKey.SPLASH)
+var main_menu_scene = Global.get_scene(Global.SceneKey.MAIN_MENU)
+var level_manager_scene = Global.get_scene(Global.SceneKey.LEVEL_MANAGER)
 
 var current_scene
 

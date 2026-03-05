@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://8eaj85jlw0mw"]
+
+[ext_resource type="Script" uid="uid://crvtj25rsvdw3" path="res://scenes/ui/main_menu.gd" id="1_tgk1t"]
+[ext_resource type="Texture2D" uid="uid://ccl315al0rsat" path="res://assets/sprites/background/background_main_menu.png" id="2_uhagc"]
+[ext_resource type="Texture2D" uid="uid://5j3e7xly2b5v" path="res://assets/sprites/background/main_menu_background_002.png" id="3_5weqt"]
+[ext_resource type="Texture2D" uid="uid://cbkg45bb4441q" path="res://assets/sprites/background/star1_main_menu.png" id="3_btxxm"]
+[ext_resource type="AudioStream" uid="uid://ctob2nsj1bmbt" path="res://assets/audio/music/menu_music.mp3" id="4_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://dao2c1qhd6gy6" path="res://assets/sprites/background/star2_main_menu.png" id="4_wb0q5"]
+[ext_resource type="FontFile" uid="uid://brucb4ud5l2" path="res://assets/fonts/Star Crush.ttf" id="6_btxxm"]
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgk1t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uhagc")
+stretch_mode = 6
+
+[node name="Star1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_btxxm")
+
+[node name="Star2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wb0q5")
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -545.0
+offset_top = -1055.0
+offset_right = 479.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5weqt")
+stretch_mode = 4
+
+[node name="TitleBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1620.0
+offset_right = -540.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.9019608, 0.8156863, 0.05490196, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -519.5
+offset_top = 73.0
+offset_right = 519.5
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.43673512, 0.09074419, 0.074422054, 1)
+theme_override_fonts/font = ExtResource("6_btxxm")
+theme_override_font_sizes/font_size = 120
+text = "Interstellar Odyssey"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -154.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_top = 1000
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Start" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_btxxm")
+theme_override_font_sizes/font_size = 150
+text = "Start"
+
+[node name="Button_Quit" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_btxxm")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+
+[node name="MainMenuOST" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m1kxf")
+
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Button_Quit" to="." method="_on_button_quit_pressed"]

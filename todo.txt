@@ -1,0 +1,10 @@
+Player control
+1) Shoot
+===========================
+List of minigames
+1) Hit the target
+2) Space invader
+3) Basket collection
+4) Tetris type
+===========================
+5) Converstaion + cutscenes
