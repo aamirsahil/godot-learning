@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmjcq4uj7n1tp"]
+
+[ext_resource type="Script" uid="uid://drkhgyxwdhf26" path="res://_legacy/ui/meter.gd" id="1_oginf"]
+
+[node name="Meter" type="Node"]
+script = ExtResource("1_oginf")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fill" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.5863437, 0.061058864, 0.053403154, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

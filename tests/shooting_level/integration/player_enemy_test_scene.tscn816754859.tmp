@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsnoch3fe3tkk"]
+
+[ext_resource type="Script" uid="uid://bk485fr63d2j" path="res://Tests/integration/player_enemy_test_scene.gd" id="1_5od76"]
+[ext_resource type="PackedScene" uid="uid://c8qvtwyr0bamg" path="res://scenes/player/player_ship.tscn" id="1_rmbtt"]
+[ext_resource type="PackedScene" uid="uid://qml78epnsbko" path="res://scenes/enemies/enemy_moving_shm.tscn" id="2_oytce"]
+[ext_resource type="PackedScene" uid="uid://c1olhawqgnmyj" path="res://scenes/utilities/sound_effects.tscn" id="4_uk4ek"]
+[ext_resource type="PackedScene" uid="uid://c8jbdlcvueayc" path="res://scenes/enemies/enemy_static.tscn" id="5_uk4ek"]
+
+[node name="PlayerEnemyTestScene" type="Node2D"]
+script = ExtResource("1_5od76")
+
+[node name="PlayerShip" parent="." instance=ExtResource("1_rmbtt")]
+position = Vector2(921, 957)
+
+[node name="EnemyMovingSHM" parent="." instance=ExtResource("2_oytce")]
+position = Vector2(910, 482)
+
+[node name="SoundEffects" parent="." instance=ExtResource("4_uk4ek")]
+
+[node name="EnemyStatic" parent="." instance=ExtResource("5_uk4ek")]
+position = Vector2(220, 122)
+
+[node name="EnemyStatic2" parent="." instance=ExtResource("5_uk4ek")]
+position = Vector2(1701, 122)
+
+[connection signal="destroyed" from="EnemyMovingSHM" to="." method="_on_enemy_moving_sine_destroyed"]

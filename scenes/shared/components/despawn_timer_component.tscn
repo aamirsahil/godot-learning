@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtmueqx4j4uvr"]
+
+[ext_resource type="Script" uid="uid://b626kwjd5n88n" path="res://scenes/shared/components/despawn_timer_component.gd" id="1_emm4j"]
+
+[node name="DespawnTimerComponent" type="Node"]
+script = ExtResource("1_emm4j")

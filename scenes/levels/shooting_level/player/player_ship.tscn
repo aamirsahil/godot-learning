@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8qvtwyr0bamg"]
+
+[ext_resource type="Script" uid="uid://b1s8blin7fgl6" path="res://scenes/levels/shooting_level/player/player_ship.gd" id="1_euhl3"]
+[ext_resource type="PackedScene" uid="uid://ob0ovq4xg4jv" path="res://scenes/levels/shooting_level/player/player.tscn" id="2_dr6dc"]
+
+[node name="PlayerShip" type="Node2D"]
+script = ExtResource("1_euhl3")
+
+[node name="Ship" parent="." instance=ExtResource("2_dr6dc")]
+
+[connection signal="laser_shot" from="Ship" to="." method="_on_ship_laser_shot"]
