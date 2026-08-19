@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkpteneux8420"]
+
+[ext_resource type="Script" uid="uid://cds1lm448hggw" path="res://scenes/levels/shooting_level/enemies/base/enemy.gd" id="1_oojpi"]
+[ext_resource type="Texture2D" uid="uid://cmxdc5h38a4id" path="res://assets/sprites/prototype/yellow_circle.png" id="2_fxs2u"]
+[ext_resource type="PackedScene" uid="uid://bdfp8xv2b35la" path="res://scenes/shared/components/health_component.tscn" id="3_fxs2u"]
+[ext_resource type="PackedScene" uid="uid://cdv4chp33hikr" path="res://scenes/shared/components/hurt_box_component.tscn" id="4_mft1c"]
+[ext_resource type="PackedScene" uid="uid://dtmueqx4j4uvr" path="res://scenes/shared/components/despawn_timer_component.tscn" id="5_2jygi"]
+[ext_resource type="Script" uid="uid://ldr0bfbxw7gx" path="res://scenes/levels/shooting_level/enemies/base/states/base/state_machine.gd" id="6_7rai8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mft1c"]
+radius = 96.02083
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_oojpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fxs2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mft1c")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_fxs2u")]
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_mft1c")]
+health_component = NodePath("../HealthComponent")
+
+[node name="DespawnTimerComponent" parent="." instance=ExtResource("5_2jygi")]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("6_7rai8")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://blqbd3rqp8py2"]
+
+[ext_resource type="PackedScene" uid="uid://bb1e1uowaxqg4" path="res://scenes/levels/shooting_level/enemies/scenes/static_enemy.tscn" id="1_gqdgm"]
+[ext_resource type="PackedScene" uid="uid://c4v38fmvbb2by" path="res://scenes/levels/shooting_level/enemies/scenes/wander_enemy.tscn" id="2_6uj3w"]
+[ext_resource type="PackedScene" uid="uid://b4c4mnn6yo2ei" path="res://scenes/levels/shooting_level/enemies/scenes/sinewave_enemy.tscn" id="3_p0v3k"]
+[ext_resource type="PackedScene" uid="uid://dwsbw0xe63hcf" path="res://scenes/levels/shooting_level/enemies/scenes/linear_enemy.tscn" id="4_ijxqb"]
+
+[node name="EnemiesTestScene" type="Node2D"]
+
+[node name="StaticEnemy" parent="." instance=ExtResource("1_gqdgm")]
+position = Vector2(973, 537)
+
+[node name="WanderEnemy" parent="." instance=ExtResource("2_6uj3w")]
+position = Vector2(448, 794)
+
+[node name="SinewaveEnemy" parent="." instance=ExtResource("3_p0v3k")]
+position = Vector2(384, 289)
+
+[node name="LinearEnemy" parent="." instance=ExtResource("4_ijxqb")]
+position = Vector2(1576, 706)

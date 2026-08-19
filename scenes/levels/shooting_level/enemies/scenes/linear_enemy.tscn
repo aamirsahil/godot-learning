@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwsbw0xe63hcf"]
+
+[ext_resource type="PackedScene" uid="uid://bkpteneux8420" path="res://scenes/levels/shooting_level/enemies/base/enemy.tscn" id="1_736il"]
+[ext_resource type="Resource" uid="uid://betg6atd6hp8h" path="res://scenes/levels/shooting_level/enemies/data/linear_enemy_data.tres" id="2_11fpa"]
+[ext_resource type="Script" uid="uid://cnnm6qrjl40ps" path="res://scenes/levels/shooting_level/enemies/states/linear.gd" id="2_s407s"]
+
+[node name="LinearEnemy" instance=ExtResource("1_736il")]
+collision_layer = 4
+collision_mask = 8
+data = ExtResource("2_11fpa")
+
+[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("starting_state")]
+starting_state = NodePath("Linear")
+
+[node name="Linear" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("2_s407s")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8l3ivl4vpa32"]
+
+[ext_resource type="Script" uid="uid://cuftpqdwnbwun" path="res://scenes/shared/laser_enemy.gd" id="1_tkbcx"]
+[ext_resource type="Texture2D" uid="uid://betasjd1r3bws" path="res://assets/sprites/prototype/red_square.png" id="2_gnp6y"]
+[ext_resource type="AudioStream" uid="uid://b3hyq38qmwj6b" path="res://assets/audio/sound_effects/laser/player_laser_enter.wav" id="3_ok0ay"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu8do"]
+height = 146.0
+
+[node name="LaserEnemy" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_tkbcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.75)
+texture = ExtResource("2_gnp6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qu8do")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ok0ay")

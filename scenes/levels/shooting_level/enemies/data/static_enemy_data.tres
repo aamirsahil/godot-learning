@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://c72fkigorookq"]
+
+[ext_resource type="AudioStream" uid="uid://dq57rntv8hr7x" path="res://assets/audio/sfx/explosion/enemy_ship_explosion.wav" id="1_3cejf"]
+[ext_resource type="Script" uid="uid://c8t2e315337n3" path="res://scenes/levels/shooting_level/enemies/base/enemy_data.gd" id="2_36xqi"]
+
+[resource]
+script = ExtResource("2_36xqi")
+display_name = "Static Enemy"
+speed = 0.0
+damage = 0
+death_sound = ExtResource("1_3cejf")
+explosion_sound = ExtResource("1_3cejf")
+detection_radius = 0.0
+wander_radius = 0.0
+move_duration = 0.0
+shoot_interval = 0.0

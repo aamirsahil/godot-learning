@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://betg6atd6hp8h"]
+
+[ext_resource type="AudioStream" uid="uid://dq57rntv8hr7x" path="res://assets/audio/sfx/explosion/enemy_ship_explosion.wav" id="1_d4ob1"]
+[ext_resource type="Script" uid="uid://c8t2e315337n3" path="res://scenes/levels/shooting_level/enemies/base/enemy_data.gd" id="1_g1ilo"]
+
+[resource]
+script = ExtResource("1_g1ilo")
+death_sound = ExtResource("1_d4ob1")
+explosion_sound = ExtResource("1_d4ob1")
+metadata/_custom_type_script = "uid://c8t2e315337n3"

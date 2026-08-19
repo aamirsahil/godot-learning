@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdx56mugv1vhh"]
+
+[ext_resource type="PackedScene" uid="uid://bkpteneux8420" path="res://scenes/levels/shooting_level/enemies/base/enemy.tscn" id="1_dm71n"]
+[ext_resource type="Script" uid="uid://ldr0bfbxw7gx" path="res://scenes/levels/shooting_level/enemies/base/states/base/state_machine.gd" id="2_5rxuw"]
+
+[sub_resource type="GDScript" id="GDScript_hytb3"]
+script/source = "class_name ChaseState
+extends State
+
+var player: Node2D
+
+func enter() -> void:
+	player = enemy.get_tree().get_first_node_in_group(\"player\")
+
+func physics_update(delta: float) -> void:
+	if player:
+		enemy.velocity = (player.global_position - enemy.global_position).normalized() * enemy.data.speed
+		enemy.move_and_slide()
+
+func get_transition() -> String:
+	if not player or enemy.global_position.distance_to(player.global_position) > enemy.data.detection_radius:
+		return \"Wander\"
+	return \"\"
+"
+
+[node name="Enemy" instance=ExtResource("1_dm71n")]
+
+[node name="StateMachine2" type="Node" parent="." index="2"]
+script = ExtResource("2_5rxuw")
+metadata/_custom_type_script = "uid://ldr0bfbxw7gx"
+
+[node name="ChaseState" type="Node" parent="StateMachine" index="0"]
+script = SubResource("GDScript_hytb3")

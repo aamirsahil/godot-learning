@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbtapnhci6ow8"]
+
+[ext_resource type="Script" uid="uid://dhyedk2je44xh" path="res://_legacy/cleaning_level_template.gd" id="1_c17sh"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_c17sh")
+
+[node name="Background" type="Node" parent="."]
+
+[node name="BackgroundContainer" type="Control" parent="Background"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/BackgroundContainer"]
+
+[node name="Esther" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Projectiles" type="Node" parent="."]
+
+[node name="Player" type="Node" parent="."]
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="Effects" type="Node" parent="."]

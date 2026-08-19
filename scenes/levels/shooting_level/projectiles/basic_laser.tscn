@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cba05ri6uxgns"]
+
+[ext_resource type="Script" uid="uid://c0l7abtajhl8q" path="res://scenes/levels/shooting_level/projectiles/basic_laser.gd" id="1_eoomh"]
+[ext_resource type="Texture2D" uid="uid://betasjd1r3bws" path="res://assets/sprites/prototype/red_square.png" id="2_5x5tl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu8do"]
+height = 146.0
+
+[node name="BasicLaser" type="Area2D"]
+script = ExtResource("1_eoomh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.75)
+texture = ExtResource("2_5x5tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qu8do")
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

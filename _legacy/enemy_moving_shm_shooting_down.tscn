@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://btgcvstxc75ko"]
+
+[ext_resource type="Script" uid="uid://bqvgy4yr63h0y" path="res://_legacy/enemy_moving_shm_shooting_down.gd" id="1_fwi34"]
+[ext_resource type="Texture2D" uid="uid://cmxdc5h38a4id" path="res://assets/sprites/prototype/yellow_circle.png" id="2_3pkl6"]
+[ext_resource type="AudioStream" uid="uid://dq57rntv8hr7x" path="res://assets/audio/sound_effects/explosion/enemy_ship_explosion.wav" id="3_n7kxt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gn4xt"]
+radius = 96.00521
+
+[node name="EnemyMovingSHMShootingDown" type="Area2D"]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("1_fwi34")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3pkl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gn4xt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n7kxt")
+volume_db = 1.0
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
