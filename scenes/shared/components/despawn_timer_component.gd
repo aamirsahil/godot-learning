@@ -4,7 +4,7 @@ extends Node
 signal timed_out
 signal blink_started
 
-@export var lifetime: float = 8.0
+@export var lifetime: float = 80.0
 @export var blink_warning_time: float = 2.0
 
 var _time_remaining: float
