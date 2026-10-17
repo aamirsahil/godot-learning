@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ch0x4lfpp4567" path="res://scenes/shared/components/hurt_box_component.gd" id="1_2nkxq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l7cy1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3jy4"]
+radius = 106.0
 
 [node name="HurtBoxComponent" type="Area2D"]
 script = ExtResource("1_2nkxq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_l7cy1")
+shape = SubResource("CircleShape2D_k3jy4")

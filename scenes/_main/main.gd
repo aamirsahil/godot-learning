@@ -1,32 +1,10 @@
 extends Node
 
-var splash_scene = Global.get_scene(Global.SceneKey.SPLASH)
-var main_menu_scene = Global.get_scene(Global.SceneKey.MAIN_MENU)
-var level_manager_scene = Global.get_scene(Global.SceneKey.LEVEL_MANAGER)
+@onready var continue_button: Button = $UI/ButtonContainer/Continue
+@onready var select_chapter_button: Button = $UI/ButtonContainer/SelectChapter
 
-var current_scene
+@export var progress_saved:bool = false
 
 func _ready() -> void:
-	show_splash()
-	
-func show_splash() -> void:
-	switch_scene(splash_scene)
-	current_scene.finished.connect(show_main_menu)
-	
-func show_main_menu() -> void:
-	switch_scene(main_menu_scene)
-	current_scene.start_game.connect(show_level)
-	current_scene.quit_game.connect(quit_game)
-
-func show_level():
-	switch_scene(level_manager_scene)
-	current_scene.back_to_menu.connect(show_main_menu)
-	
-func quit_game():
-	get_tree().quit()
-	
-func switch_scene(scene):
-	if current_scene:
-		current_scene.queue_free()
-	current_scene = scene.instantiate()
-	add_child(current_scene)
+	continue_button.visible = progress_saved
+	select_chapter_button.visible = progress_saved

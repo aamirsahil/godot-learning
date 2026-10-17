@@ -1,6 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnsbebxbkr42j"]
+[gd_scene load_steps=3 format=3 uid="uid://bnsbebxbkr42j"]
 
 [ext_resource type="Script" uid="uid://l1k5bcehbits" path="res://scenes/_main/main.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://c5dis46eyl8wb" path="res://assets/sprites/background/title_background_texture.png" id="2_e2w4p"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
+progress_saved = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Background" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e2w4p")
+
+[node name="GameTitle" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = 175.0
+offset_right = 60.5
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewGame" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+
+[node name="Continue" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="SelectChapter" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Select Chapter"
+
+[node name="Quit" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx6g0fr1ciirb"]
+
+[ext_resource type="Script" uid="uid://dwxj5n5s6scoi" path="res://scenes/shared/ui/meter_display.gd" id="1_q0sdt"]
+
+[node name="MeterDisplay" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_q0sdt")
