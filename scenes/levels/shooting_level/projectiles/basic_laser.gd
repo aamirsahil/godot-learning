@@ -32,7 +32,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent() == shooter:
 		return
 	if area is HurtBoxComponent:
-		area.hit.emit(damage)
+		area.hit.emit(self)
 	_hit()
 
 func _hit() -> void:
