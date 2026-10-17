@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cnnm6qrjl40ps" path="res://scenes/levels/shooting_level/enemies/states/linear.gd" id="2_s407s"]
 
 [node name="LinearEnemy" instance=ExtResource("1_736il")]
-collision_layer = 4
 collision_mask = 8
 data = ExtResource("2_11fpa")
 
