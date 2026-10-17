@@ -11,6 +11,8 @@
 radius = 96.02083
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_oojpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,6 +24,8 @@ shape = SubResource("CircleShape2D_mft1c")
 [node name="HealthComponent" parent="." instance=ExtResource("3_fxs2u")]
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_mft1c")]
+collision_layer = 64
+collision_mask = 8
 health_component = NodePath("../HealthComponent")
 
 [node name="DespawnTimerComponent" parent="." instance=ExtResource("5_2jygi")]
