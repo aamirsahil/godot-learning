@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bguu232w50ewo"]
+
+[node name="LoseScreen" type="Node2D"]
