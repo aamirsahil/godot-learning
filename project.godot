@@ -23,6 +23,8 @@ config/icon="uid://c618cnyyxntlw"
 
 Global="*res://autoloads/global.gd"
 AudioManager="*res://autoloads/audio_manager.gd"
+SaveManager="*res://autoloads/save_manager.gd"
+LevelManager="*res://autoloads/level_manager.gd"
 
 [display]
 
