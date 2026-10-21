@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnsbebxbkr42j"]
+[gd_scene load_steps=5 format=3 uid="uid://bnsbebxbkr42j"]
 
 [ext_resource type="Script" uid="uid://l1k5bcehbits" path="res://scenes/_main/main.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://c5dis46eyl8wb" path="res://assets/sprites/background/title_background_texture.png" id="2_e2w4p"]
+[ext_resource type="Texture2D" uid="uid://ddy7mpnfuqveb" path="res://assets/sprites/text/title.png" id="3_bf064"]
+[ext_resource type="Texture2D" uid="uid://crwequkuqptpd" path="res://assets/sprites/background/mainmenu_linedrawing.png" id="3_thq3m"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
@@ -15,6 +17,15 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
+[node name="BackgroundColor" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18915439, 0.035456378, 0.019104136, 1)
+
 [node name="Background" type="TextureRect" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
@@ -24,11 +35,26 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_e2w4p")
 
+[node name="TextureRect" type="TextureRect" parent="UI"]
+modulate = Color(1, 1, 1, 0.24705882)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_thq3m")
+
 [node name="GameTitle" type="TextureRect" parent="UI"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1091.0
+offset_right = 1091.0
+offset_bottom = 721.0
 grow_horizontal = 2
+texture = ExtResource("3_bf064")
 
 [node name="ButtonContainer" type="VBoxContainer" parent="UI"]
 layout_mode = 1
@@ -63,3 +89,7 @@ text = "Select Chapter"
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[connection signal="pressed" from="UI/ButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="UI/ButtonContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="UI/ButtonContainer/Quit" to="." method="_on_quit_pressed"]
