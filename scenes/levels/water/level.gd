@@ -1,10 +1,13 @@
-extends Node2D
+extends Node
 
 @onready var label: Label = $UI/Label
 var input_enabled = false
 
 func _ready() -> void:
-	label.text = "Playing level " + LevelManager.current_level
+	label.text = "Playing " + LevelManager.current_level + " level" \
+	+ "\nPress (W) to move to next level" \
+	+ "\nPress (S) to return to main menu"
+	label.add_theme_font_size_override("font_size", 50)
 	await get_tree().create_timer(1.0).timeout
 	input_enabled = true
 	
