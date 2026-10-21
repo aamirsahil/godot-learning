@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://k86nlxfi6cfe"]
+[gd_scene load_steps=2 format=3 uid="uid://k86nlxfi6cfe"]
+
+[ext_resource type="Script" uid="uid://b0fwxaim542i0" path="res://scenes/levels/hospital/level.gd" id="1_4vemc"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_4vemc")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
