@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://yx7qaif5bq7c"]
+[gd_scene load_steps=2 format=3 uid="uid://yx7qaif5bq7c"]
+
+[ext_resource type="Script" uid="uid://dgf0c1v4eebde" path="res://scenes/levels/restoration/level.gd" id="1_on3ff"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_on3ff")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

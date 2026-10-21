@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfqswer46lk4j"]
+
+[ext_resource type="Script" uid="uid://dujh5ahja4xfq" path="res://scenes/levels/crossing/level.gd" id="1_niuk5"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_niuk5")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

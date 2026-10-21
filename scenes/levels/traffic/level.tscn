@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://b5osq651iojve"]
+[gd_scene load_steps=2 format=3 uid="uid://b5osq651iojve"]
+
+[ext_resource type="Script" uid="uid://cg6u86mt42gxf" path="res://scenes/levels/traffic/level.gd" id="1_tmmhu"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_tmmhu")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://c0rr018jhtpq8"]
+[gd_scene load_steps=2 format=3 uid="uid://c0rr018jhtpq8"]
+
+[ext_resource type="Script" uid="uid://crl25j53rvcmy" path="res://scenes/levels/rhythm/level.gd" id="1_mt2sj"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_mt2sj")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
