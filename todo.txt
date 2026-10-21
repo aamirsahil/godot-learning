@@ -1,10 +1,12 @@
-Player control
-1) Shoot
-===========================
-List of minigames
-1) Hit the target
-2) Space invader
-3) Basket collection
-4) Tetris type
-===========================
-5) Converstaion + cutscenes
+I need to make the basic logic flow of the game
+
+game opens -> splash screen logo -> mainmenu
+new game -> send signal to level manager -> level manager know where the signal came from and know where to go -> load to level 1 and exit menu 
+exit -> send quit signal to level manager -> quit the game
+
+level 1 -> press "W" send signal to level manager -> go to level 2(this also set save manger.progers saved to true and current level to 2)
+.. for rest of the level till last level
+
+at any point of level press "S" to go back to main menu.
+
+currently each level is separate scene in respective folder. and level manager is a autoload script
