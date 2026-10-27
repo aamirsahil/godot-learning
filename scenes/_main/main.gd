@@ -5,7 +5,7 @@ extends Node
 
 func _ready() -> void:
 	continue_button.visible = SaveManager.progress_saved
-	select_chapter_button.visible = SaveManager.progress_saved
+	select_chapter_button.visible = SaveManager.progress_saved or SaveManager.finished
 
 
 func _on_new_game_pressed() -> void:
