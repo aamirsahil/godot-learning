@@ -4,6 +4,7 @@ const SAVE_PATH := "user://savegame.json"
 
 var progress_saved:bool = false
 var current_level:int = 1
+var finished:bool = false
 
 func _ready() -> void:
 	load_game()
@@ -31,12 +32,20 @@ func load_game():
 	
 	progress_saved = data.get("progress_saved", false)
 	current_level = data.get("current_level", 1)
+	finished = data.get("finished", false)
 	
 func save_game():
 	var save_data = {
 		"progress_saved" : progress_saved,
-		"current_level" : current_level
+		"current_level" : current_level,
+		"finished" : finished
 	}
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data, "\t"))
 	file.close()
+
+func game_finished():
+	progress_saved = false
+	current_level = 1
+	finished = true
+	save_game()
