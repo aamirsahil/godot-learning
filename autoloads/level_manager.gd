@@ -35,7 +35,9 @@ func advance_level() -> void:
 	var next_level = SaveManager.current_level + 1
 	
 	if next_level > LEVELS.size():
+		SaveManager.game_finished()
 		return_to_mainmenu()
+		return
 		
 	SaveManager.advance_to_level(next_level)
 	load_level(next_level)
